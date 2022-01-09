@@ -1,3 +1,10 @@
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+
+	<script src="js/controllers/main.js"></script> 
+	<script src="js/services/todos.js"></script> 
+	<script src="js/core.js"></script> 
+
 <section class="heading-section">
 
   <h1 class="title is-1 has-text-centered">Things to do</h1>
@@ -13,10 +20,11 @@
           <input ngModel #todoTextField="ngModel" required minlength="2" name="text" class="input" type="text" placeholder="Type TODO here ...">
         </p>
         <p class="control">
-          <button type="submit" class="button alt-gradient-button">
+          <button type="submit" class="button alt-gradient-button" ng-click="createTodo()">
             <i class="material-icons">add</i>
             Add
           </button>
+          
         </p>
       </div>
       <div *ngIf="todoTextField.invalid && showValidationErrors">
